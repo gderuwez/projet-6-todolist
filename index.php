@@ -1,23 +1,27 @@
 <?php
-  include 'contenu.php';
+  include 'process.php';
   include 'head.php';
 ?>
 <form action="" method="post" class="w3-display-container">
   <h3 class="w3-deep-purple w3-center">A FAIRE</h3>
-  <?php
-    echo todoprint();
-    echo todoprint2();
-  ?>
-  <br>
-  <div class="w3-center">
-    <input type="submit" name="save" value="enregistrer" class="w3-btn w3-mobile w3-round w3-purple">
+  <div class="todo">
+    <?php
+      echo todoprint();
+      // echo todoprint2();
+    ?>
   </div>
+  <br>
+  <!-- <div class="w3-center">
+    <input type="submit" name="save" value="enregistrer" class="w3-btn w3-mobile w3-round w3-purple">
+  </div> -->
   <hr>
   <h3 class="w3-deep-purple w3-center">ARCHIVE</h3>
-  <?php
-    echo doneprint();
-    echo doneprint2();
-   ?>
+  <div class="archive">
+    <?php
+      // echo doneprint();
+      // echo doneprint2();
+     ?>
+  </div>
 </form>
 <hr>
 <form action="" method="post" class="w3-container">
