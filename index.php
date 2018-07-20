@@ -1,42 +1,33 @@
 <?php
   include 'contenu.php';
-  include 'checklist.php';
   include 'head.php';
 ?>
-<p>A FAIRE</p>
-<form class="" action="" method="post">
+<form action="" method="post" class="w3-display-container">
+  <h3 class="w3-deep-purple w3-center">A FAIRE</h3>
   <?php
-    if(isset($_POST["submit"])){
-      foreach ($decoded_tasks as $value) {
-        echo '<input type="checkbox" name="taskstodo[]" value="'.$value.'"> '.$value.'<br>';
-      }
-    }
-    elseif (isset($_POST["save"])) {
-      $tokeep = array_diff($decoded_tasks, $_POST["taskstodo"]);
-      foreach ($tokeep as $value) {
-        echo '<input type="checkbox" name="taskstodo[]" value="'.$value.'"> '.$value.'<br>';
-      }
-    }
+    echo todoprint();
+    echo todoprint2();
   ?>
-  <input type="submit" name="save" value="enregistrer">
+  <br>
+  <div class="w3-center">
+    <input type="submit" name="save" value="enregistrer" class="w3-btn w3-mobile w3-round w3-purple">
+  </div>
+  <hr>
+  <h3 class="w3-deep-purple w3-center">ARCHIVE</h3>
+  <?php
+    echo doneprint();
+    echo doneprint2();
+   ?>
 </form>
 <hr>
-<p>ARCHIVE</p>
-<?php
-  if(isset($_POST["save"])){
-    $check = $_POST["taskstodo"];
-    foreach ($check as $value) {
-      echo '<input checked type="checkbox" name="taskdone[]" value="'.$value.'"> <s>'.$value.'</s><br>';
-    }
-  }
- ?>
-<hr>
-<form class="" action="" method="post">
-  <label for="task">Task to realise</label>
+<form action="" method="post" class="w3-container">
+  <label class="w3-large w3-deep-purple w3-center w3-show" for="task">Input your task here</label>
   <br>
-  <textarea name="task" rows="8" cols="80"></textarea>
-  <br>
-  <input type="submit" name="submit" value="submit">
+  <textarea class="w3-input w3-border" name="task" rows="8" cols="80"></textarea>
+  <div class="w3-center">
+    <input type="submit" name="submit" value="submit" class="w3-btn w3-round w3-purple w3-mobile w3-margin-top">
+    <input type="submit" name="clear" value="clear" class="w3-btn w3-round w3-purple w3-mobile w3-margin-top">
+  </div>
 </form>
 <?php
   include 'footer.php';
