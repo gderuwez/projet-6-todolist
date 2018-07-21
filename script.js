@@ -10,28 +10,27 @@
 //   });
 // }
 
+const test = (check, classtouse, keyword, content) => {
+  let data = {};
+  let value = check.next();
+  let breakbal = value.next();
+  data[keyword] = content;
+  breakbal.detach();
+  value.detach();
+  check.detach();
+  $($(classtouse)).append(check);
+  $($(classtouse)).append(value);
+  $($(classtouse)).append(breakbal);
+  $.post('process.php', data);
+}
+
 $("input[type=checkbox]").click(function(){
   let check = $(this);
+  let content = check.val();
   if (check.is(':checked')) {
-    let value = check.next();
-    let breakbal = value.next();
-    breakbal.detach();
-    value.detach();
-    check.detach();
-    $($('.archive')).append(check);
-    $($('.archive')).append(value);
-    $($('.archive')).append(breakbal);
-    $.post('process.php', check.val());
+    test(check, '.archive', 'archive', content);
   }
   else {
-    console.log('unchecked');
-    let next = $(this).next();
-    let nextNext = next.next();
-    nextNext.detach();
-    next.detach();
-    $(this).detach();
-    $($('.todo')).append(this);
-    $($('.todo')).append(next);
-    $($('.todo')).append(nextNext);
+    test(check, '.todo', 'todo', content);
   }
 });
