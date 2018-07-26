@@ -13,6 +13,7 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="description" content="a to do list">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="./assets/style/style.css">
   <title>To do list</title>
 </head>
 <body>
