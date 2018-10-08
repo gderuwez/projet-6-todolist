@@ -14,5 +14,5 @@
 -The second version of the app, using javascript, proved much easier to implement with a far simplified logic.
 
 ## Modules, Libraries or frameworks used:
-[php](http://php.net/)
-[jquery](https://jquery.com/)
+-[php](http://php.net/)
+-[jquery](https://jquery.com/)
